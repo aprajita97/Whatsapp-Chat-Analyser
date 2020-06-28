@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    html{
+  scroll-behavior: smooth;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+nav{
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+li{
+  float: left;
+}
+a{
+  padding: 20px;
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#general{
+  height: 700px;
+  background-color: aliceblue;
+  display: inline-block;
+  width: 100%;
+}
+#wc{
+  height: 700px;
+  background-color: rgb(164, 87, 236);
+  display: inline-block;
+  width: 100%;
+}
+#emoji{
+  height: 700px;
+  background-color: rgb(147, 11, 238);
+  display: inline-block;
+  width: 100%;
+}
+#hours{
+  height: 700px;
+  background-color:cadetblue;
+  display: inline-block;
+  width: 100%;
+}
+#days{
+  height: 700px;
+  background-color:darkturquoise;
+  display: inline-block;
+  width: 100%;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href = "#general">General analysis</a></li>
+            <li><a href = "#wc">Most used words</a></li>
+            <li><a href = "#emoji">Most used emojis</a></li>
+            <li><a href = "#hours">Busiest hours</a></li>
+            <li><a href = "#days">Busiest days</a></li>
+            <li><a href = "http://localhost:5000/">Try another chat</a></li>
+        </ul>
+    </nav>
+    <div id = "general">
+        <center>
+        <br><br><br><br><br>
+        <h1><u>Following is the analysis of {{ user1 }} and {{user2}}'s chat </h1></u>
+        <br><br><br>
+        <p>Number of messages sent by each user are: <b>{{count_msg}}</b></p>
+        <p>The most used word by {{user1}} is <b>{{muw1}}</b> and the most used word by {{user2}} is <b>{{muw2}}</b></p>
+        <p>{{user1}} sent <b>{{mc1}}</b> media files and {{user2}} sent <b>{{mc2}}</b> media files. </p>
+        </center>
+    </div>
+
+    <div id = "wc">
+        <center>
+        <br><br>
+        <div style="padding: 40px;" class="row"><h1>Top 10 used words by {{user1}} and {{user2}}<h1></div>
+        <div class="row">
+            <div style ="float:left; padding-left: 25%;" class = "col">{{wl1|safe}}</div>
+            <div style ="float:right; padding-right:25%;"class = "col">{{wl2|safe}}</div>
+        </center>
+    </div>
+    <div id = "emoji">
+        <center>
+        <br>
+        <div style="padding: 40px;" class="row"><h1>Top 10 used emojis by {{user1}} and {{user2}}<h1></div>
+        <div style ="padding-botton:30px;" class="row">
+            <div style ="float:left; padding-left: 25%;" class = "col">{{emoji1|safe}}</div>
+            <div style ="float:right; padding-right:25%;"class = "col">{{emoji2|safe}}</div>
+        </center>
+        <br><br><br>
+    </div>
+    <div id = "hours">
+        <center>
+        <br>
+        <div style="padding: 40px;" class="row"><h1>Top 10 chatty and non chatty hours of a day for {{user1}} and {{user2}}<h1></div>
+        <div style ="padding-botton:30px;" class="row">
+            <div style ="float:left; padding-left: 25%;" class = "col"><h3>Busy Hours</hr><br>{{bh|safe}}</div>
+            <div style ="float:right; padding-right:25%;"class = "col"><h3>Non-Busy Hours</hr><br>{{nbh|safe}}</div>
+        </center>
+        <br><br><br>
+    </div>
+    <div id = "days">
+        <center>
+        <br>
+        <div style="padding: 40px;" class="row"><h1>Top 10 chatty and non chatty days of {{user1}} and {{user2}}<h1></div>
+        <div style ="padding-botton:30px;" class="row">
+            <div style ="float:left; padding-left: 25%;" class = "col"><h3>Busy Days</hr><br>{{bd|safe}}</div>
+            <div style ="float:right; padding-right:25%;"class = "col"><h3>Non-Busy Days</hr><br>{{nbd|safe}}</div>
+        </center>
+        <br><br><br>
+    </div>
+    
+
+    
+</body>
+</html>

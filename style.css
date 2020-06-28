@@ -1,0 +1,53 @@
+html{
+  scroll-behavior: smooth;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+nav{
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+li{
+  float: left;
+}
+a{
+  padding: 20px;
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#general{
+  height: 700px;
+  background-color: aliceblue;
+  display: inline-block;
+  width: 100%;
+}
+#wc{
+  height: 700px;
+  background-color: rgb(164, 87, 236);
+  display: inline-block;
+  width: 100%;
+}
+#general{
+  height: 700px;
+  background-color: rgb(147, 11, 238);
+  display: inline-block;
+  width: 100%;
+}
